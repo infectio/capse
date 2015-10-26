@@ -1,0 +1,10 @@
+Code of viral spread simulation framework based on CA-PSE modeling.
+
+  Compilation
+  ===========
+
+A certain part of CAPS has been optimized and rewritten in C (mex) to achieve (optional) speed up. To compile type this in MATLAB command prompt:
+
+>> caps.compile
+
+

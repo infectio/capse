@@ -1,0 +1,39 @@
+  Refactoring TODO
+  ================
+
+1) Separate logic (decouple code) by packing into 
+
+    caps.visual  - all the GUI related primitives. Should be intepended from
+                   main computational cycles (algorithms), which run in
+                   parrallel (hence must be as lightweight as possible).
+
+    caps.debug   - functions for verbosity output.
+
+    caps.results - function to read input parameters (of models) and save
+                   intermidiate and final results at all stages of simulation.
+
+    caps.config  - create a separate namespace for several parameters.
+
+2) Continue fixing/correcting side-effects of earlier refactoring efforts, 
+   e.g. getting of global variable space (too many global variables problem 
+   - which results in high code coupling).
+   Reduce number of parameters in all functions (not more than 5 
+   input/output parameters are to be allowed) [use "handles" to structure 
+   variables - collection of groups of variables]. 
+
+3) Move out faculty/secondary code like analysis and plotting of data into
+   tools/* folder of CAPS.
+
+4) Rewrite all code comments. Each commented section should be a separate 
+   (new) file or function. Each script or function should start with 
+   correct MATLAB documentation headaer according to special format supported 
+   by MATLAB (should follow code-to-documentation mechanism)
+
+5) Add and create contents.m code (see other toolboxes and SimuCell).
+
+x) Reduce the length of any program element (files, functions, etc.), i.e.
+   reduce number of lines by making more files
+
+
+
+

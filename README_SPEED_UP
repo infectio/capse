@@ -1,0 +1,9 @@
+Comments to speed up branch:
+
+- The mex file is in the "mex" folder
+- There you find also the command to compile in the readme
+- The speed improvment of the function applyPSE is about 20 times. However, the overall speed improvment is about 2-3 times! So that means we have to speed other things as well.
+	-> for example advection... As soon as I have time, I'd do that with pleasure!
+- In the m-file runPSE.m you have the possibility to switch between C-Version and Matlab-Version!
+- You used the function hour(), minute() and second() in VirusModel.m. But those functions require the Financal toolbox, which I don't have. So I had to change that. Do we really want to use those fuctions???
+- So this was tested on Linux with gcc so far, not on Win
