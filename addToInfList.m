@@ -1,0 +1,26 @@
+function inf_list = addToInfList( ...
+    inf_list, ... 
+    newly_inf_cells, ...
+    intensityRates, ... 
+    CAGrid, ...
+    virusAmtDim, ....
+    ExtrapolationFlag)
+    
+    for i=1:size(newly_inf_cells,1)
+        
+        
+        initialInfectionValue = CAGrid(newly_inf_cells(i,1), ...
+                                                        newly_inf_cells(i,2), virusAmtDim);
+        intensityRate = interpolateIntensityRate(intensityRates, ...
+                                                initialInfectionValue, ExtrapolationFlag);
+        
+        inf_list{end+1}.x = newly_inf_cells(i,1);
+        inf_list{end}.y = newly_inf_cells(i,2);
+        inf_list{end}.initInfVal = initialInfectionValue;
+        inf_list{end}.intRate = intensityRate;
+        inf_list{end}.valid = true;
+        
+    end
+    
+
+end
