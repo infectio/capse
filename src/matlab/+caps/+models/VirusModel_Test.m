@@ -33,7 +33,7 @@ caps.config.init;
 % caps.utils.rand_seed();
 
 % Overriding  some parameters & flags here:
-cells_x = 5; % small model for debug purpuses
+cells_x = 5; % small model for debug purposes
 [cellX cellY] =unitHexagonAt(1,1);
 y_scaling_factor = max(cellY) - min(cellY);
 cells_y = ceil(cells_x*y_scaling_factor);
