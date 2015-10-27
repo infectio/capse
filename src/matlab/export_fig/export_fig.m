@@ -152,7 +152,7 @@ function [im alpha] = export_fig(varargin)
 % Parse the input arguments
 [fig options] = parse_args(nargout, varargin{:});
 % Isolate the subplot, if it is one
-cls = strcmp(get(fig, 'Type'), 'axes');
+cls = isgraphics(fig,'axes');
 if cls
     % Given a handle of a single set of axes
     fig = isolate_subplot(fig);
@@ -598,7 +598,7 @@ function fh = copyfig(fh)
 % Is there a legend?
 if isempty(findobj(fh, 'Type', 'axes', 'Tag', 'legend'))
     % Safe to copy using copyobj
-    fh = copyobj(fh, 0);
+    fh = copyobj(fh, 0, 'legacy');
 else
     % copyobj will change the figure, so save and then load it instead
     tmp_nam = [tempname '.fig'];
